@@ -10,6 +10,8 @@ const keys = [
 	'_dark',
 	'_light',
 	'l-light',
+	'estampie-light',
+	'estampie-dark',
 	'l-coffee',
 	'l-apricot',
 	'l-rainy',
