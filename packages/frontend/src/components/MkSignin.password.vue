@@ -31,7 +31,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 				<MkCaptcha v-if="instance.enableTestcaptcha" ref="testcaptcha" v-model="testcaptchaResponse" provider="testcaptcha"/>
 			</div>
 
-			<MkButton type="submit" :disabled="needCaptcha && captchaFailed" large primary rounded style="margin: 0 auto;" data-cy-signin-page-password-continue>{{ i18n.ts.continue }} <i class="ti ti-arrow-right"></i></MkButton>
+			<MkButton type="submit" :disabled="false" large primary rounded>{{ i18n.ts.continue }} <i class="ti ti-arrow-right"></i></MkButton>
 		</form>
 	</div>
 </div>
