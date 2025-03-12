@@ -18,11 +18,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 				<!-- eslint-disable-next-line vue/no-v-html -->
 				<div v-html="instance.description || i18n.ts.headlineMisskey"></div>
 			</div>
-			<div v-if="instance.disableRegistration || instance.federation !== 'all'" :class="$style.mainWarn" class="_gaps_s">
-				<MkInfo v-if="instance.disableRegistration" warn>{{ i18n.ts.invitationRequiredToRegister }}</MkInfo>
-				<MkInfo v-if="instance.federation === 'specified'" warn>{{ i18n.ts.federationSpecified }}</MkInfo>
-				<MkInfo v-else-if="instance.federation === 'none'" warn>{{ i18n.ts.federationDisabled }}</MkInfo>
-			</div>
+
 			<div class="_gaps_s" :class="$style.mainActions">
 				<MkButton :class="$style.mainAction" full rounded gradate data-cy-signup style="margin-right: 12px;" @click="signup()">{{ i18n.ts.joinThisServer }}</MkButton>
 				<MkButton :class="$style.mainAction" full rounded link to="https://misskey-hub.net/servers/">{{ i18n.ts.exploreOtherServers }}</MkButton>
@@ -30,25 +26,9 @@ SPDX-License-Identifier: AGPL-3.0-only
 			</div>
 		</div>
 	</div>
-	<div v-if="stats" :class="$style.stats">
-		<div :class="[$style.statsItem, $style.panel]">
-			<div :class="$style.statsItemLabel">{{ i18n.ts.users }}</div>
-			<div :class="$style.statsItemCount"><MkNumber :value="stats.originalUsersCount"/></div>
-		</div>
-		<div :class="[$style.statsItem, $style.panel]">
-			<div :class="$style.statsItemLabel">{{ i18n.ts.notes }}</div>
-			<div :class="$style.statsItemCount"><MkNumber :value="stats.originalNotesCount"/></div>
-		</div>
-	</div>
-	<div v-if="instance.policies.ltlAvailable" :class="[$style.tl, $style.panel]">
-		<div :class="$style.tlHeader">{{ i18n.ts.letsLookAtTimeline }}</div>
-		<div :class="$style.tlBody">
-			<MkTimeline src="local"/>
-		</div>
-	</div>
-	<div :class="$style.panel">
-		<XActiveUsersChart/>
-	</div>
+
+
+
 </div>
 </template>
 
